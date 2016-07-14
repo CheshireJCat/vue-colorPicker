@@ -19,7 +19,7 @@
     </section>
 
     <section class="main-content" id="app">
-    <style type="text/css">td{width:10px;height:10px;}</style>
+    <style type="text/css">.main-content table th, .main-content table td{padding:0;width:10px;height:10px;}</style>
      <table v-el:colorPicker v-bind:style="colorPickerStyle">
 		<tbody>
 			<tr v-for="tr in 16">
@@ -52,9 +52,9 @@
 				this.colorPickerInput = event.target;
 				var ox = this.colorPickerInput.offsetLeft;
 				oy = this.colorPickerInput.offsetTop,
-				cw = 240,
-				ch = 240;
-				this.colorPickerStyle.left = ox+cw>this.ww?this.ww-240+'px':ox+'px';
+				cw = 160,
+				ch = 160;
+				this.colorPickerStyle.left = ox+cw>this.ww?this.ww-cw+'px':ox+'px';
 				this.colorPickerStyle.top = oy-ch>0?oy-ch+'px':oy+this.colorPickerInput.clientHeight*2+'px';
 				this.isColorPickerShow = true;
 			},
